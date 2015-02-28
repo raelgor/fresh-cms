@@ -12,3 +12,5 @@ A lite and flexible CMS.
 * Fix meta data for share links
 * Merge and minify CSS and JS
 * Add caching headers and gzip
+* Analytics
+* The **"null"** bug
