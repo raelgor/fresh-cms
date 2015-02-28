@@ -10,3 +10,5 @@ A lite and flexible CMS.
 * Create Google+ Page
 * Image dimention spaceholding
 * Fix meta data for share links
+* Merge and minify CSS and JS
+* Add caching headers and gzip
