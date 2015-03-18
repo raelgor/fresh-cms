@@ -149,7 +149,9 @@ if($_REQUEST["action"] == "update-pages"){
 	$data = json_decode($_REQUEST["data"]);
 	$dbh->query("delete from pages");
 
-	foreach($data as &$i) $dbh->prepare("insert into pages (id,title,html) values (:id,:title,:html)")->execute(array( ":id" => $i->id , ":title" => $i->title , ":html" => $i->html ));
+  // Why the fuck?
+	foreach($data as &$i)
+	  $dbh->prepare("insert into pages (id,title,html,`alias`) values (:id,:title,:html,:alias)")->execute(array( ":alias"=>$i->alias , ":id" => $i->id , ":title" => $i->title , ":html" => $i->html ));
 
 }
 
@@ -226,7 +228,7 @@ if($_REQUEST["action"] == "update-clients"){
 	$data = json_decode($_REQUEST["data"]);
 	$dbh->query("delete from clients");
 
-	foreach($data as &$i) $dbh->prepare("insert into clients (id,title,`index`,thumbnail_id,thumbnail_baw_id) values (:id,:title,:index,:tid,:tidbaw)")->execute(array( ":id" => $i->id , ":title" => $i->title , ":index" => $i->index , ":tid" => $i->thumbnail_id , ":tidbaw" => $i->thumbnail_baw_id  ));
+	foreach($data as &$i) $dbh->prepare("insert into clients (id,title,`index`,thumbnail_id,thumbnail_baw_id,alias) values (:id,:title,:index,:tid,:tidbaw,:alias)")->execute(array( ":alias" => $i->alias , ":id" => $i->id , ":title" => $i->title , ":index" => $i->index , ":tid" => $i->thumbnail_id , ":tidbaw" => $i->thumbnail_baw_id  ));
 
 }
 
