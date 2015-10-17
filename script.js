@@ -549,8 +549,10 @@ tab["2"] = function(){
 }
 tab["3"] = function(){
 
-	var title = '<div class="tabTitle">Works<input type="button" class="create" value="+ Create new" style="float:right;margin-top: 1%;" /></div><div class="pages"><div class="works-pool"></div><div class="works-scope"><div class="thumbnail_image"><div>Choose image</div></div><input type="text" class="title" placeholder="Title" disabled /><select disabled><option data-id="0">Select client...</option></select><span class="likescount"></span><textarea placeholder="HTML contents..." disabled></textarea><input type="hidden" class="wid" /><div class="saved"><input class="delete" type="button" value="Delete work" disabled /><input type="button" class="save" value="Save changes" disabled /></div></div></div>';
+	var title = '<div class="tabTitle">Works<input type="button" class="create" value="+ Create new" style="float:right;margin-top: 1%;" /></div><div class="pages"><div class="works-pool"></div><div class="works-scope"><div class="thumbnail_image"><div>Choose image</div></div><input type="text" class="title" placeholder="Title" disabled /><select disabled><option data-id="0">Select client...</option></select><span class="likescount"></span><textarea name="cketa" placeholder="HTML contents..."></textarea><input type="hidden" class="wid" /><div class="saved"><input class="delete" type="button" value="Delete work" disabled /><input type="button" class="save" value="Save changes" disabled /></div></div></div>';
 	$('.tabContent').html(title);
+
+	//tinymce.init({selector: '[name="cketa"]'});
 
 	websiteData.clients.forEach(function(c){ var el = document.createElement('option'); $(el).attr('data-id',c.id).html(c.title); $('select').append(el); });
 	function fillpool(){
@@ -599,7 +601,10 @@ tab["3"] = function(){
 			$('.thumbnail_image').attr('data-id','').css('background-image','none');
 			$('.title').val(x.title).prop('disabled',false).focus();
 			$('.wid').val(x.id).prop('disabled',false);
-			$('textarea').val(x.html).prop('disabled',false);
+			$('textarea').val(x.html).prop('disabled', false);
+
+			//ck.setData(x.html);
+
 			$('select [data-id="'+x.client_id+'"]').prop('selected',true);
 			$('select').prop('disabled',false);
 			$('.delete').prop('disabled',false);

@@ -4,15 +4,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta content='width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0' name='viewport' />
 <title>Fresh Ideas | CMS</title>
+<script src="tinymce.min.js"></script>
 <script src="jquery-1.10.2.js"></script>
 <script src="jquery-ui-1.10.4.min.js"></script>
 <script src="script.js"></script>
 <link href="styles.css" rel="stylesheet" type="text/css" />
+<style>
+    html {
+    
+        height: 100%;
+
+    }
+
+    #tinymce-13 {
+        display: block;
+        margin: 30px 0 0 0;
+    }
+</style>
 <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
 
-<iframe src="http://fresh-ideas.eu/alt"></iframe>
+<iframe src="http://fresh-ideas.eu/"></iframe>
 <div class="windShield"></div>
 <div class="cmsWindow ani05">
 
